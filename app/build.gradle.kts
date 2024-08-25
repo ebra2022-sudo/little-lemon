@@ -1,6 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.ksp) // This applies the KSP plugin
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.compose.compiler)
+
 }
 
 android {
@@ -59,6 +63,18 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.androidx.material.icons.extended.android)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.room.runtime.android)
+    implementation(libs.androidx.runtime.livedata)
+    implementation(libs.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose.android)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.kotlinx.serialization.json)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
